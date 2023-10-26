@@ -1,0 +1,7 @@
+C:\Users\ltybj\OneDrive\Desktop\.net\SchoolObjectFactory\SchoolObjectFactory\obj\Debug\SchoolObjectFactory.csproj.AssemblyReference.cache
+C:\Users\ltybj\OneDrive\Desktop\.net\SchoolObjectFactory\SchoolObjectFactory\obj\Debug\SchoolObjectFactory.csproj.CoreCompileInputs.cache
+C:\Users\ltybj\OneDrive\Desktop\.net\SchoolObjectFactory\SchoolObjectFactory\bin\Debug\SchoolObjectFactory.exe.config
+C:\Users\ltybj\OneDrive\Desktop\.net\SchoolObjectFactory\SchoolObjectFactory\bin\Debug\SchoolObjectFactory.exe
+C:\Users\ltybj\OneDrive\Desktop\.net\SchoolObjectFactory\SchoolObjectFactory\bin\Debug\SchoolObjectFactory.pdb
+C:\Users\ltybj\OneDrive\Desktop\.net\SchoolObjectFactory\SchoolObjectFactory\obj\Debug\SchoolObjectFactory.exe
+C:\Users\ltybj\OneDrive\Desktop\.net\SchoolObjectFactory\SchoolObjectFactory\obj\Debug\SchoolObjectFactory.pdb
