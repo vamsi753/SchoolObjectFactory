@@ -7,85 +7,41 @@ namespace SchoolObjectFactory
     {
         static void Main(string[] args)
         {
-            // Create student, teacher, and subject objects using the Factory Method
-            var schoolFactory = SchoolObjectFactorySingleton.Instance;
 
-            var student1 = schoolFactory.CreateStudent("John Doe", "Class A");
-            var student2 = schoolFactory.CreateStudent("Jane Smith", "Class B");
+            List<Student> students = new List<Student>();
+            List<Teacher> teachers = new List<Teacher>();
+            List<Subject> subjects = new List<Subject>();
 
-            var teacher1 = schoolFactory.CreateTeacher("Mr. Johnson", "Class A");
-            var teacher2 = schoolFactory.CreateTeacher("Mrs. Brown", "Class B");
+            students.Add(new Student { Name = "John", SubjectCode = "Math101", Teacher = "Mr. Smith" });
+            students.Add(new Student { Name = "Alice", SubjectCode = "Bio101", Teacher = "Mrs. Johnson" });
 
-            var subject1 = schoolFactory.CreateSubject("Math", "MATH101", teacher1);
-            var subject2 = schoolFactory.CreateSubject("Science", "SCI101", teacher2);
+            teachers.Add(new Teacher { Name = "Mr. Smith" });
+            teachers.Add(new Teacher { Name = "Mrs. Johnson" });
 
-            // Display the created objects
-            Console.WriteLine("Students:");
-            Console.WriteLine($"{student1.Name}, {student1.ClassSection}");
-            Console.WriteLine($"{student2.Name}, {student2.ClassSection}");
+            subjects.Add(new Subject { SubjectCode = "Math101" });
+            subjects.Add(new Subject { SubjectCode = "Bio101" });
 
-            Console.WriteLine("\nTeachers:");
-            Console.WriteLine($"{teacher1.Name}, {teacher1.ClassSection}");
-            Console.WriteLine($"{teacher2.Name}, {teacher2.ClassSection}");
-
-            Console.WriteLine("\nSubjects:");
-            Console.WriteLine($"{subject1.Name}, {subject1.SubjectCode}, Teacher: {subject1.Teacher.Name}");
-            Console.WriteLine($"{subject2.Name}, {subject2.SubjectCode}, Teacher: {subject2.Teacher.Name}");
-        }
-    }
-
-    class Student
-    {
-        public string Name { get; set; }
-        public string ClassSection { get; set; }
-    }
-
-    class Teacher
-    {
-        public string Name { get; set; }
-        public string ClassSection { get; set; }
-    }
-
-    class Subject
-    {
-        public string Name { get; set; }
-        public string SubjectCode { get; set; }
-        public Teacher Teacher { get; set; }
-    }
-
-    class SchoolObjectFactory
-    {
-        public Student CreateStudent(string name, string classSection)
-        {
-            return new Student { Name = name, ClassSection = classSection };
-        }
-
-        public Teacher CreateTeacher(string name, string classSection)
-        {
-            return new Teacher { Name = name, ClassSection = classSection };
-        }
-
-        public Subject CreateSubject(string name, string subjectCode, Teacher teacher)
-        {
-            return new Subject { Name = name, SubjectCode = subjectCode, Teacher = teacher };
-        }
-    }
-
-    class SchoolObjectFactorySingleton
-    {
-        private static SchoolObjectFactory _instance;
-
-        private SchoolObjectFactorySingleton() { }
-
-        public static SchoolObjectFactory Instance
-        {
-            get
+  
+            Console.WriteLine("Students in Math101 class:");
+            foreach (var student in students)
             {
-                if (_instance == null)
+                if (student.SubjectCode == "Math101")
                 {
-                    _instance = new SchoolObjectFactory();
+                    Console.WriteLine(student.Name);
                 }
-                return _instance;
+            }
+
+  
+            Console.WriteLine("Subjects taught by Mr. Smith:");
+            foreach (var subject in subjects)
+            {
+                foreach (var student in students)
+                {
+                    if (student.SubjectCode == subject.SubjectCode && student.Teacher == "Mr. Smith")
+                    {
+                        Console.WriteLine(subject.SubjectCode);
+                    }
+                }
             }
         }
     }
